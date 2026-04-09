@@ -1,2 +1,2 @@
 # Portfolio-website
-A simple portfolio website project for web development 
+A simple portfolio website project for frontend web development 
