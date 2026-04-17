@@ -15,13 +15,30 @@ html {
   --bg: rgb(32, 32, 32);
   --green: rgb(123, 218, 0);
   --hover: rgb(190, 190, 190);
-  --accent: rgb(255, 255, 255);
+  --accent: rgb(248, 248, 248);
 }
 
 body{
     background-color: var(--bg);
     color: var(--accent);
 }
+
+.intro {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: var(--bg);
+  color: var(--green);
+  font-size: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeOut 1s ease-in-out 1.5s forwards; 
+}
+
 
 nav{
   background-color: var(--bg);
@@ -35,11 +52,27 @@ nav{
   z-index: 100;
 }
 
+#hamburger{
+  border: 0;
+  background:none;
+  font-size: 1.3rem;
+  color: var(--accent);
+  display: none;
+  position: absolute;
+  top: 11px;
+  right: 16px;
+}
+
+.hamburger{
+  max-height: 250px;
+  flex-direction: column;
+}
+
 nav span{
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   animation: down-up both;
   animation-duration: 2s;
-  animation-delay: 2s;
+  animation-delay: 4s;
 }
 
 ul li{
@@ -54,10 +87,7 @@ ul li a{
   text-decoration: none;
   margin: 0px 10px;
   transition: 0.4s;
-  animation: down-up both;
-  animation-duration: 2s;
-  animation-delay: 2s;
-  animation-fill-mode: backwards
+  font-size: 1.5rem;
 }
 
 ul li a:hover{
@@ -67,7 +97,7 @@ ul li a:hover{
 
 .hero{
   background-image: url(grid.avif);
-  height: 90vh;
+  height: 80vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -81,6 +111,7 @@ ul li a:hover{
   margin: 20px;
   animation: left-right both;
   animation-duration: 2s;
+  animation-delay: 2.5s;
 }
 
 .hero span{
@@ -94,7 +125,7 @@ ul li a:hover{
   margin: 0px 20px;
   animation: left-right both;
   animation-duration: 2s;
-  animation-delay: 1.3s;
+  animation-delay: 3.5s;
 }
 
 .cta{
@@ -106,10 +137,10 @@ ul li a:hover{
   padding: 15px 10px;
   border-radius: 10px;
   transition: 0.3s;
-  text-shadow: 1px 1px 7px rgba(0, 0, 0, 0.5);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
   animation: left-right both;
   animation-duration: 2s;
-  animation-delay: 2s;
+  animation-delay: 3.5s;
   animation-fill-mode: backwards
 }
 
@@ -120,8 +151,8 @@ ul li a:hover{
 
 #about{
   background-image: url(grid.avif);
-  height: 90vh;
-  padding: 35px 20px;
+  height: 70vh;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -141,7 +172,7 @@ ul li a:hover{
 
 .info{
   font-size: 1.3rem;
-  margin-bottom: 50px;
+  margin-bottom: 10px;
   margin-left: 15px;
   animation: left-right both;
   animation-timeline: view();
@@ -151,11 +182,13 @@ ul li a:hover{
 .about-grid{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  max-width: 80%;
+  margin: 30px auto;
   gap: 20px;
 }
 
 .about-grid p{
-  margin-top: 30px;
+  margin-top: 2px;
   background-color: var(--bg);
   padding: 30px 15px;
   font-size: 1.3rem;
@@ -166,19 +199,17 @@ ul li a:hover{
 
 .one{  
   animation: down-up both;
-  animation-timeline: view();
-  animation-range: entry 20% cover 40%;
+  animation-timeline: view(50% 10%);
 }
 
 .two{  
-  animation: up-down both;
-  animation-timeline: view();
+  animation: down-up both;
+  animation-timeline: view(40px 20%);
 }
 
 .three{  
   animation: down-up both;
-  animation-timeline: view();
-  animation-range: entry 60% cover 80%;
+  animation-timeline: view(20% 30%);
 }
 
 .about-grid p span{
@@ -221,23 +252,30 @@ ul li a:hover{
 }
 
 #card-one{  
-  animation: right-left both;
+  animation: up-down both;
   animation-timeline: view();
   animation-range: entry 40% cover 60%;
   animation-fill-mode: backwards;
 }
 
 #card-two{  
-  animation: scale both;
+  animation: down-up both;
   animation-timeline: view();
-  animation-range: entry 55% cover 60%;
+  animation-range: entry 40% cover 60%;
   animation-fill-mode: backwards;
 }
 
 #card-three{  
-  animation: left-right both;
+  animation: up-down both;
   animation-timeline: view();
-  animation-range: entry 40% cover 50%;
+  animation-range: entry 40% cover 60%;
+  animation-fill-mode: backwards;
+}
+
+#card-four{  
+  animation: down-up both;
+  animation-timeline: view();
+  animation-range: entry 40% cover 60%;
   animation-fill-mode: backwards;
 }
 
@@ -264,6 +302,10 @@ ul li a:hover{
 .project3{
   background-image: url(cafe/cafe.png);
 }
+.project4{
+  background-image: url(Resturent/restaurent.png);
+}
+
 
 .card h3{
   margin: 10px;
@@ -324,13 +366,39 @@ ul li a:hover{
   text-shadow: 0px 0px 15px var(--green);
 }
 
+hr{
+  border: 0;
+  border-top: 1px solid var(--bg);
+}
+
+footer{
+  text-align: center;
+  background-color: rgb(8, 8, 8);
+  padding: 15px;
+}
+
+@keyframes fadeOut {
+  0% { 
+    opacity: 1; 
+    display: flex
+  }
+  99% { 
+    opacity: 0; 
+    display: flex;
+  }
+  100% { 
+    opacity: 0; 
+    display: none;
+  }
+}
+
 @keyframes left-right{
   from{opacity: 0; transform: translateX(-20px);}
   to{opacity: 1; transform: translateX(0px);}
 }
 
 @keyframes down-up{
-  from{opacity: 0; transform: translateY(15px);}
+  from{opacity: 0; transform: translateY(25px);}
   to{opacity: 1; transform: translateY(0px);}
 }
 
@@ -340,7 +408,7 @@ ul li a:hover{
 }
 
 @keyframes up-down{
-  from{opacity: 0; transform: translateY(-15px);}
+  from{opacity: 0; transform: translateY(-25px);}
   to{opacity: 1; transform: translateY(0px);}
 }
 
@@ -351,7 +419,7 @@ ul li a:hover{
 
 @media (max-width:1024px){
   nav{font-size: 1.2rem;}
-  nav span{font-size: 1rem;}
+  nav span{font-size: 1.4rem;}
   .hero{height: 75vh;}
   .hero h1{font-size: 3.5rem; margin: 10px 20px;}
   .hero p{font-size: 1.4rem;}
@@ -366,9 +434,18 @@ ul li a:hover{
   #contact p{font-size: 1.2rem; margin-bottom: 10px;}
 }
 
+@media (max-width:1023px){
+    nav{font-size: 1.35rem; padding: 20px;}
+    ul li {display: none;}
+    ul li a{font-size: 1.25rem;}
+    #hamburger{display: block; font-size: 1.5rem; top: 15px;}
+}
+
 @media (max-width:900px){
-  nav{font-size: 1.2rem;}
+  nav{font-size: 1.1rem;}
   nav span{font-size: 1rem;}
+  ul li a{font-size: 1.1rem; margin-top: 2px;}
+  #hamburger{font-size: 1.3rem; top: 18px; right: 20px;}
   .hero{height: 75vh;}
   .hero h1{font-size: 3rem; margin: 10px 20px;}
   .hero p{font-size: 1.2rem;}
@@ -387,6 +464,8 @@ ul li a:hover{
 @media (max-width:600px){
   nav{font-size: 1rem;}
   nav span{font-size: 1rem;}
+  ul li a{font-size: 1rem;}
+  #hamburger{font-size: 1.2rem; top: 18px;}
   .hero{height: 75vh;}
   .hero h1{font-size: 3rem; margin: 10px 20px;}
   .hero p{font-size: 1.2rem;}
@@ -403,12 +482,14 @@ ul li a:hover{
 }
 
 @media (max-width:480px){
-  nav{font-size: 0.8rem;}
+  nav{font-size: 0.8rem; padding: 20px 15px;}
   nav span{font-size: 0.9rem;}
+  ul li a{font-size: 1rem;}
+  #hamburger{font-size: 1.1rem; top: 18px;}
   .hero{height: 75vh;}
-  .hero h1{font-size: 3rem; margin: 10px 20px;}
+  .hero h1{font-size: 2.8rem; margin: 10px 20px;}
   .hero p{font-size: 1.2rem;}
-  .cta{padding: 10px;font-size: 0.9rem;}
+  .cta{padding: 5px;font-size: 0.8rem;}
   #about{height: 90vh}
   #about h2{font-size: 2rem; margin: 10px 15px;}
   #about p{font-size: 1.1rem; margin-bottom: 10px;}
@@ -422,11 +503,13 @@ ul li a:hover{
 
 @media (max-width:375px){
   nav{font-size: 0.7rem; align-items: baseline;}
+  ul li a{font-size: 0.9rem;}
+  #hamburger{font-size: 1rem;}
   nav span{font-size: 0.9rem;}
   .hero{height: 90vh;}
-  .hero h1{font-size: 2.2rem; margin: 10px 20px;}
+  .hero h1{font-size: 2rem; margin: 10px 20px;}
   .hero p{font-size:0.9rem;}
-  .cta{padding: 7px;font-size: 0.8rem;}
+  .cta{padding: 5px;font-size: 0.2rem;}
   #about{height: 100vh; padding: 15px;}
   #about h2{font-size: 1.7rem; margin: 10px 15px;}
   #about p{font-size: 1rem; margin-bottom: -5px;}
