@@ -335,18 +335,24 @@ i:hover {
 }
 
 .project1 {
-  background-image: url(personal-trainer/Personal-Trainer.png);
+  background-image: url(local-gym/assets/powerfitness.png);
 }
 .project2 {
-  background-image: url(bmw/bmw.png);
+  background-image: url(uncle-burger/assets/uncleburger.png);
 }
 .project3 {
   background-image: url(cafe/cafe.png);
 }
 .project4 {
-  background-image: url(Resturent/restaurent.png);
+  background-image: url(personal-trainer/Personal-Trainer.png);
 }
 .project5 {
+  background-image: url(bmw/bmw.png);
+}
+.project6 {
+  background-image: url(Resturent/restaurent.png);
+}
+.project7 {
   background-image: url(Hangman/assest/Hangman\ Game.png);
 }
 
@@ -543,8 +549,9 @@ footer {
 }
 
 @media (max-width: 700px) {
+  nav span, #hamburger{font-size: 1.1rem;}
   .hero {
-    min-height: auto;
+    height: 70%;
   }
 
   .cardimg {
