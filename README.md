@@ -7,4 +7,5 @@ A simple portfolio website project for frontend web development
 -fixed hero-about sections spacing.
 
 ### update:
--huge design changes.
+-huge design changes.<br>
+-added my latest projects.
